@@ -26,10 +26,10 @@ def part_1():
 # MA
 def check_for_masx(lines: list[list[str]], letter_idx: int, line_index: int, line: list[str]):
     sum_found = 0
-    can_check_right = True if letter_idx + 2 < len(line) else False
-    can_check_left = True if letter_idx - 2 >= 0 else False
-    can_check_down = True if line_index + 2 < len(lines) else False
-    can_check_up = True if line_index - 2 >= 0 else False
+    can_check_right = letter_idx + 2 < len(line)
+    can_check_left = letter_idx - 2 >= 0
+    can_check_down = line_index + 2 < len(lines)
+    can_check_up = line_index - 2 >= 0
     if can_check_right and can_check_down:
         if line[letter_idx + 2] == 'S' and lines[line_index+1][letter_idx+1] == 'A' and \
             lines[line_index+2][letter_idx] == 'M' and lines[line_index+2][letter_idx+2] == 'S':
