@@ -2,11 +2,16 @@ from itertools import product
 from operator import add, mul
 
 def main():
-    part_1()
+    sol(False)
+    sol(True)
 
 
-def part_1():
-    operators = {add, mul}
+def concat(a, b):
+    return int(str(a) + str(b))
+
+
+def sol(part_2: bool):
+    operators = {add, mul, concat} if part_2 else {add, mul}
     total = 0
     with open('day07/input.txt', 'r') as file:
         for line in file:
